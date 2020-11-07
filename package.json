@@ -1,0 +1,23 @@
+{
+  "name": "database-project",
+  "version": "1.0.0",
+  "description": "It is an Ecommerce Website",
+  "main": "app.js",
+  "scripts": {
+    "website": "nodemon app.js"
+  },
+  "author": "Team Neutrals",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.13",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.6"
+  }
+}
