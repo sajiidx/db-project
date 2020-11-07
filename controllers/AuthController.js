@@ -18,11 +18,13 @@ const register = (req, res, next) => {
         })
         user.save()
         .then(user => {
+            return res.redirect('/api/login');
             res.json({
                 message: 'User Added Successfully!'
             })
         })
         .catch(error => {
+            return res.redirect('/api/register');
             res.json({
                 message: 'An Error Occured!'
             })
@@ -45,15 +47,20 @@ const login = (req, res, next) => {
                 }
                 if(result){
                     let token = jwt.sign({name: user.name}, 'verySecretValue', {expiresIn: '1h'})
+                    return res.redirect('/home')
                     res.json({
                         message: 'Login Succesful!',
                         token
                     })
+                    
                 }
                 else{
+                    
                     res.json({
                         message: 'Password does not matched!'
                     })
+                    return res.redirect('/api/login')
+                    
                 }
             })
         }
