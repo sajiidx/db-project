@@ -47,20 +47,12 @@ const login = (req, res, next) => {
                 }
                 if(result){
                     let token = jwt.sign({name: user.name}, 'verySecretValue', {expiresIn: '1h'})
-                    return res.redirect('/home')
-                    res.json({
-                        message: 'Login Succesful!',
-                        token
-                    })
-                    
+                    req.session.user = user; //or whatever
+                    return res.redirect('/home')                
                 }
                 else{
-                    
-                    res.json({
-                        message: 'Password does not matched!'
-                    })
+                    res.status(401).send();
                     return res.redirect('/api/login')
-                    
                 }
             })
         }

@@ -2,11 +2,13 @@ const express = require('express')
 const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
+const session = require('express-session');
 
 const UserRoute = require('./routes/user')
 const AuthRoute = require('./routes/auth')
+const HomeRoute = require('./routes/home')
 
-mongoose.connect('mongodb://localhost:27018/testdb', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/testdb', { useNewUrlParser: true, useUnifiedTopology: true})
 const db = mongoose.connection
 
 db.on('error', (err) => {
@@ -25,6 +27,7 @@ app.use(express.static(__dirname + '/public'))
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
+app.use(session({secret: 'mySecret', resave: false, saveUninitialized: false}));
 
 const PORT = process.env.PORT || 3000
 
@@ -34,3 +37,4 @@ app.listen(PORT, () => {
 
 app.use('/api/user',UserRoute)
 app.use('/api',AuthRoute)
+app.use('/',HomeRoute)
