@@ -4,7 +4,7 @@ const router = express.Router()
 
 router.get('/home', function(req, res){
     var user = req.session.user;
-    res.render('home.ejs', user)
+    res.render('index.ejs', user)
 })
 
 module.exports = router

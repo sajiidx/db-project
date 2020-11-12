@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const morgan = require('morgan')
 const bodyParser = require('body-parser')
 const session = require('express-session');
+var flash = require('express-flash')
 
 const UserRoute = require('./routes/user')
 const AuthRoute = require('./routes/auth')
@@ -24,6 +25,7 @@ const app = express()
 app.set('view-engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 
+app.use(flash())
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())

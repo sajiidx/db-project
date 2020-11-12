@@ -19,15 +19,9 @@ const register = (req, res, next) => {
         user.save()
         .then(user => {
             return res.redirect('/api/login');
-            res.json({
-                message: 'User Added Successfully!'
-            })
         })
         .catch(error => {
             return res.redirect('/api/register');
-            res.json({
-                message: 'An Error Occured!'
-            })
         })
     })
 }
