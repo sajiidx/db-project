@@ -57,7 +57,19 @@ const login = (req, res, next) => {
         }
     })
 }
-
+function checkAuthenticated(req, res, next) {
+    if (req.session.user != null) {
+      return next()
+    }
+    res.redirect('/api/login')
+}
+  
+function checkNotAuthenticated(req, res, next) {
+    if (req.session.user != null) {
+        return res.redirect('/home')
+    }
+    next()
+}
 module.exports = {
-    register, login
+    register, login, checkAuthenticated, checkNotAuthenticated
 }
