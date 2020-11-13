@@ -8,8 +8,9 @@ var flash = require('express-flash')
 const UserRoute = require('./routes/user')
 const AuthRoute = require('./routes/auth')
 const HomeRoute = require('./routes/home')
+const ProductRoute = require('./routes/product')
 
-mongoose.connect('mongodb://localhost:27017/testdb', { useNewUrlParser: true, useUnifiedTopology: true})
+mongoose.connect('mongodb://localhost:27017/testdb', { useNewUrlParser: true, useUnifiedTopology: true,useCreateIndex: true,})
 const db = mongoose.connection
 
 db.on('error', (err) => {
@@ -40,3 +41,4 @@ app.listen(PORT, () => {
 app.use('/api/user',UserRoute)
 app.use('/api',AuthRoute)
 app.use('/',HomeRoute)
+app.use('/products',ProductRoute)

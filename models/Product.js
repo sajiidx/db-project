@@ -14,7 +14,7 @@ const productSchema = new Schema({
         required: true,
     },
     price:{
-        type: Double,
+        type: Number,
         required: true
     },
     description:{
