@@ -51,10 +51,15 @@ html
             a(class="carousel-control-next", href="#carouselExampleFade", role="button", data-slide="next")
                 span(class="carousel-control-next-icon", aria-hidden="true")
                 span(class="sr-only") Next
+
         section(class="product-view")
             each product in  Products
                 div 
-                    h5 #{ product.pid }
-                    h3 #{ product.pname }
-                    h4 $#{ product.price }
-                    
+                    p(class="product-id") #{ product.pid }
+                    h5(class="product-name") #{ product.pname }
+                    div
+                        img(src="/images/watch1.jpg", class="image". alt= "img")
+
+                    h4(class="product-price") $#{ product.price }
+    
+    footer Copyright © 2020 Team Neutral
