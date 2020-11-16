@@ -34,7 +34,7 @@
           <a class="nav-link" href="/about.html">AboutUs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/login.html"><%= username %></a>
+          <a class="nav-link" href="/login.html"><%= user.username %></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/api/logout">Log Out</a>
@@ -70,8 +70,49 @@
       </a>
     </div>
   </section>
+  <script type="text/JavaScript">
+    import { index } from "../controllers/ProductController"
+    function createHiElement(i, text){
+        var h = document.createElement(i);
+        var t = document.createTextNode(text);
+        h.appendChild(t);
+        document.body.appendChild(h);
+        return h;
+    } 
 
-  <script src="../js/home.js" type="text/javascript"></script>
+    function createProductView(product){
+        var div = document.createElement('div');
+        div.id = product.pid;
+        div.className =  'product';
+
+        var text = createHiElement("H3",product.pname)
+        div.appendChild(text);
+
+        // add div to the document
+        document.body.appendChild(div);
+
+        div.style.height = "300px";
+        div.style.width = "250px";
+        div.style.backgroundColor = "white";
+        div.style.margin = "10px"
+        div.style.boxShadow = "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)"
+        div.style.textAlign = "center"
+        div.style.flexWrap = "wrap";
+        return div;
+    }
+    var section = document.createElement('section');
+    section.id = "product-view"
+    section.className =  'product-view';
+    section.style.display = 'flex';
+    section.style.justifyContent = 'center'
+    section.style.padding = "10px"
+    section.style.flexWrap = "wrap"
+    xProducts = index;
+    for (product in xProducts){ 
+      section.appendChild(createProductView(product)) 
+      console.log(product) 
+    } 
+  </script>
   
   <scrip src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

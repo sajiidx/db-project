@@ -5,14 +5,21 @@ const Product = require('../models/Product')
 const index = (req, res, next) => {
     Product.find()
     .then(response => {
-        return res.json({
-            response
-        })
+        response
     })
     .catch(error => {
         res.json({
-            message: "An Error Orrcured!"
+            message: "An Error Occured!"
         })
+    })
+}
+const getProducts = (req, res, next) => {
+    return Product.find()
+    .then(response => {
+        return response
+    })
+    .catch(error => {
+        return error
     })
 }
 //show Product using ID
@@ -95,5 +102,5 @@ const destory = (req, res, next) => {
 }
 //exporting functions
 module.exports = {
-    index, show, store, update, destory
+    index, show, store, update, destory, getProducts
 }

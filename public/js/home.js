@@ -1,6 +1,3 @@
-
-const ProductController = require('../../controllers/ProductController.js')
-
 function createHiElement(i, text){
     var h = document.createElement(i);
     var t = document.createTextNode(text);
@@ -30,36 +27,44 @@ function createProductView(product){
     return div;
 }
 
-var section = document.createElement('section');
-section.id = "product-view"
-section.className =  'product-view';
-section.style.display = 'flex';
-section.style.justifyContent = 'center'
-section.style.padding = "10px"
-section.style.flexWrap = "wrap"
+function createSection(id){
+    var section = document.createElement('section' + id);
+    section.id = "product-view"
+    section.className =  'product-view';
+    section.style.display = 'flex';
+    section.style.justifyContent = 'center'
+    section.style.padding = "10px"
+    section.style.flexWrap = "wrap"
+    return section;
+}
 
-var Products = ProductController.index
-console.log(Products)
 
-var product  = {pid: "p123",pname: "Laptop"}
-document.body.appendChild(section)
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
-section.appendChild(createProductView(product))
+module.exports = {
+    createHiElement, createSection, createProductView
+}
+
+// var Products = index
+// console.log(Products)
+
+// var product  = {pid: "p123",pname: "Laptop"}
+// document.body.appendChild(section)
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
+// section.appendChild(createProductView(product))
 
