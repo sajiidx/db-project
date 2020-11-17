@@ -2,6 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caveat&family=Rajdhani:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Macondo&display=swap');
+
 html{
     height: 100%;
 }
@@ -91,8 +93,9 @@ footer .about-us-details{
     flex-direction: column;
 }
 footer .about-us-details .logo-class{
-    text-transform: uppercase;
+    text-transform: capitalize;
     letter-spacing: 5px;
+    font-family: 'Macondo', cursive;
 }
 footer .about-us-details .social-media-links ul{
     display: flex;
