@@ -22,8 +22,6 @@ MongoClient.connect(url, function(err, db) {
   });
 }); 
 
-
-
 router.get('/home', AuthController.checkAuthenticated ,function(req, res){
     var user = req.session.user;
     var Products = Result

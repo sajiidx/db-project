@@ -63,9 +63,112 @@ html{
     font-family: 'Caveat', cursive;
 }
 footer{
-    text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: BentonSans,"Arial","sans-serif";
     text-transform: uppercase;
-    letter-spacing: 3px;
+    letter-spacing: 1px;
+    font-size: small;
+    color: black;
+
+}
+footer .footer-extra{
+    height: 50px;
+}
+footer .footer-top{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    height: 300px;
+    padding-top: 50px;
+    border-top: 1px solid #ededed;
+    border-top-color: rgb(237, 237, 237);
+    border-top-style: solid;
+    border-top-width: 1px;
+    
+}
+footer .about-us-details{
+    display: flex;
+    flex-direction: column;
+}
+footer .about-us-details .logo-class{
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+footer .about-us-details .social-media-links ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 0;
+}
+footer .about-us-details .social-media-links ul li{
+    list-style: none;
+}
+footer .about-us-details .social-media-links ul .facebook a img{
+    height: 35px;
+}
+footer .about-us-details .social-media-links ul .instagram a img{
+    height: 35px;
+}
+footer .about-us-details .social-media-links ul .twitter a img{
+    height: 35px
+}
+footer .about-us-details .social-media-links ul .youtube a img{
+    height: 35px
+}
+footer .footer-shop-guide{
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+footer .footer-shop-guide h5{
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+}
+footer .footer-shop-guide ul{
+    padding: 0;
+    margin-top: 20px;
+}
+footer .footer-shop-guide ul li{
+    list-style: none;
+    padding-bottom: 3px;
+}
+footer .footer-shop-guide ul li a{
+    text-decoration: none;
+    
+    color: black;
+}
+footer .footer-aboutus{
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+footer .footer-aboutus h5{
+    font-size: 18px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+footer .footer-aboutus ul{
+    padding: 0;
+    margin-top: 20px;
+}
+footer .footer-aboutus ul li{
+    list-style: none;
+    padding-bottom: 3px;
+}
+footer .footer-aboutus ul li a{
+    text-decoration: none;
+    color: #000;
+}
+footer .footer-copyright{
+    text-align: center;
+    font-size: small;
+    color: black;
+    border-top: 1px solid #ededed;
+    border-top-color: rgb(237, 237, 237);
+    border-top-style: solid;
+    border-top-width: 1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+footer .footer-copyright p {
+    margin: 0px;
 }
